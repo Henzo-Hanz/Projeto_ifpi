@@ -43,7 +43,7 @@
         </div>
 
         <!-- Últimas Notícias: Lista vertical -->
-        <div class="flex flex-col">
+        <div class="flex flex-col space-y-4">
             <h2 class="text-cyan-500 text-2xl font-bold">Últimas notícias</h2> <!-- Título ciano, negrito -->
             <ul class="list-disc pl-5 text-gray-700 space-y-2"> <!-- Lista com bullets, espaçamento -->
                 <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni tempora, natus assumenda officia exercitationem enim vero laboriosam optio nulla amet? Excepturi perspiciatis non nostrum libero totam, esse enim vel! Ea?</li>
@@ -52,19 +52,17 @@
                 <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum amet ducimus sapiente fugit? Incidunt eum minima, temporibus at dolorum ducimus neque suscipit accusantium saepe, eaque impedit minus ea expedita unde.</li>
                 <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus fugit aut magni nisi voluptates. Debitis autem architecto itaque vel quod accusamus, ducimus illum sapiente nisi quae cum soluta nihil deleniti?</li>
             </ul>
+            <div class="flex flex-col border-t-2 border-b-2 border-gray-400 text-center" >
+                <h3 class="text-cyan-500 text-xl my-4">Previsão do tempo</h3> <!-- Título menor -->
+                    
+                <div class="flex items-center mx-auto">
+                    <span>☁️</span>
+                    <p class="my-2">33° Parnaíba, PI</p> <!-- essa span deve mudar de acordo com o wheather, ou seja se chuvoso muda o íncone e etc além das próprias infos de dentro -->
+                </div>
+            </div>
         </div>
 
         <!-- Previsão do Tempo: Título + ícone + temp -->
-        <div class="flex flex-col">
-            <hr class="bg-black">
-            <h3 class="text-cyan-500 text-xl">Previsão do tempo</h3> <!-- Título menor -->
-            <div class="flex items-center space-x-2">
-                <hr class="bg-black"> <!-- Alinhamento horizontal -->
-                <span>☁️</span> <!-- Ícone placeholder -->
-                <p>33° Parnaíba, PI</p>
-                <hr class="bg-black">
-            </div>
-        </div>
     </section>
 
     <!-- Destaques do Dia: Grid com lista, imagens e colunistas -->
