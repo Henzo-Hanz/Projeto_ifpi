@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Informativo</title>
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Integração Tailwind via CDN -->
+</head>
+<body class="bg-white text-black font-sans"> <!-- Fundo branco e fonte sans-serif padrão para toda a página -->
+
+    <!-- Cabeçalho Principal: Centralizado, com título grande e data pequena -->
+    <header class="text-center py-4">
+        <h1 class="text-cyan-500 text-6xl font-bold">O INFORMATIVO</h1> <!-- Cor ciano, tamanho grande, negrito para destaque -->
+        <p class="text-sm text-gray-500">Quinta-feira, 2 de setembro de 2025</p> <!-- Texto cinza pequeno para data -->
+    </header>
+
+    <!-- Navegação: Barra horizontal com links, underline no ativo, responsiva (flex wrap em mobile) -->
+    <nav class="flex justify-center space-x-4 border-b border-gray-200 py-2 text-black">
+        <a href="#" class="text-cyan-500 underline">Início</a> <!-- Link ativo com underline e cor ciano -->
+        <a href="#" class="hover:text-cyan-500">Notícias</a> <!-- Hover para interatividade -->
+        <a href="#" class="hover:text-cyan-500">Internacional</a>
+        <a href="#" class="hover:text-cyan-500">Intretenimento</a> <!-- Corrigido de "Intretenimento" para consistência -->
+        <a href="#" class="hover:text-cyan-500">Educação</a>
+        <a href="#" class="hover:text-cyan-500">Tecnologia</a>
+    </nav>
+
+    <!-- Barra Lateral Esquerda: Ícones verticais (casa, engrenagem, envelope), fixa em desktop -->
+    <aside class="fixed left-0 top-1/4 flex flex-col space-y-4 text-cyan-500">
+        <!-- Ícones placeholders; use imagens reais ou SVG em produção -->
+        <span>🏠</span> <!-- Ícone de início -->
+        <span>⚙️</span> <!-- Ícone de configurações -->
+        <span>✉️</span> <!-- Ícone de email -->
+    </aside>
+
+    <!-- Seção Hero: Imagem de fundo com sobreposição de texto, ao lado de últimas notícias e previsão -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 py-4"> <!-- Grid responsivo: 1 coluna em mobile, 3 em desktop -->
+        <!-- Hero Image com Sobreposição -->
+        <div class="relative col-span-2"> <!-- Ocupa 2 colunas em desktop -->
+            <img src="caminho/para/imagem-hero.jpg" alt="Cidade ao pôr do sol" class="w-full h-96 object-cover"> <!-- Imagem de fundo, cover para ajuste -->
+            <div class="absolute bottom-0 left-0 p-4 text-white text-4xl font-bold bg-black bg-opacity-50 w-full"> <!-- Sobreposição semi-transparente para legibilidade -->
+                Alerta máximo: 2025 registra recordes de calor e evidencia colapso climático
+            </div>
+        </div>
+
+        <!-- Últimas Notícias: Lista vertical -->
+        <div class="flex flex-col">
+            <h2 class="text-cyan-500 text-2xl font-bold">Últimas notícias</h2> <!-- Título ciano, negrito -->
+            <ul class="list-disc pl-5 text-gray-700 space-y-2"> <!-- Lista com bullets, espaçamento -->
+                <li>texto texto textos texto textos</li>
+                <li>texto texto textos texto textos</li>
+                <li>texto texto textos texto textos</li>
+                <li>texto texto textos texto textos</li>
+                <li>texto texto textos texto textos</li>
+            </ul>
+        </div>
+
+        <!-- Previsão do Tempo: Título + ícone + temp -->
+        <div class="flex flex-col">
+            <h3 class="text-cyan-500 text-xl">Previsão do tempo</h3> <!-- Título menor -->
+            <div class="flex items-center space-x-2"> <!-- Alinhamento horizontal -->
+                <span>☁️</span> <!-- Ícone placeholder -->
+                <p>33° Parnaíba, PI</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destaques do Dia: Grid com lista, imagens e colunistas -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 py-4">
+        <h2 class="text-cyan-500 text-3xl font-bold col-span-3">DESTAQUES DO DIA</h2> <!-- Título full-width -->
+        
+        <!-- Lista de Destaques -->
+        <ul class="list-disc pl-5 text-gray-700 space-y-2 col-span-1">
+            <li>texto texto textos texto textos</li>
+            <li>texto texto textos texto textos</li>
+            <li>texto texto textos texto textos</li>
+            <li>texto texto textos texto textos</li>
+            <li>texto texto textos texto textos</li>
+        </ul>
+
+        <!-- Imagens de Destaque: Duas imagens lado a lado em desktop -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 col-span-2">
+            <img src="caminho/para/imagem1.jpg" alt="Nuvens" class="w-full h-48 object-cover"> <!-- Ajuste de tamanho -->
+            <img src="caminho/para/imagem2.jpg" alt="Pôr do sol" class="w-full h-48 object-cover">
+        </div>
+    </section>
+
+    <!-- Seção Colunistas: Lista vertical -->
+    <section class="px-4 py-4">
+        <h2 class="text-cyan-500 text-2xl font-bold">Colunistas</h2>
+        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+            <li>texto texto textos texto textos</li>
+            <li>texto texto textos texto textos</li>
+            <li>texto texto textos texto textos</li>
+            <li>texto texto textos texto textos</li>
+            <li>texto texto textos texto textos</li>
+        </ul>
+    </section>
+
+    <!-- Seção Adicional Últimas Notícias (repetida no rodapé, como na imagem mobile) -->
+    <section class="px-4 py-4">
+        <h2 class="text-cyan-500 text-2xl font-bold">Últimas notícias</h2>
+        <!-- Conteúdo similar à sidebar, para consistência -->
+    </section>
+
+</body>
+</html>
