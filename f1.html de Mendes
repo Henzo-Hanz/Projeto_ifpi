@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de F1</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white">
+
+    <aside class="fixed left-0 top-0 h-screen w-[60px] bg-cyan-600 flex flex-col items-center py-6 space-y-6 text-white text-2xl">
+        <a href="lslm.html" class="hover:scale-110 transition">🏠</a>
+        <span class="hover:scale-110 transition cursor-pointer">⚙</span>
+        <span class="hover:scale-110 transition cursor-pointer">✉</span>
+    </aside>
+
+
+
+    <header class="py-4 ml-[60px] bg-white">
+
+        <nav class="flex items-center justify-between px-10 py-2">
+
+            <h1 class="text-cyan-500 text-2xl font-extrabold whitespace-nowrap">
+                O INFORMATIVO
+            </h1>
+
+            <div class="flex gap-8 text-lg font-medium mx-auto">
+
+                <a href="#" class="hover:text-blue-500">Categoria 1</a>
+                <a href="#" class="hover:text-blue-500">Categoria 2</a>
+                <a href="#" class="hover:text-blue-500">Categoria 3</a>
+                <a href="#" class="hover:text-blue-500">Categoria 4</a>
+                <a href="#" class="hover:text-blue-500">Categoria 5</a>
+                <a href="#" class="hover:text-blue-500">Categoria 6</a>
+                <a href="#" class="hover:text-blue-500">Categoria 7</a>
+                <a href="#" class="hover:text-blue-500">Categoria 8</a>
+                <a href="#" class="hover:text-blue-500">Categoria 9</a>
+
+            </div>
+
+            <a 
+                href="https://www.reddit.com/r/ape/comments/17uzjrs/big_monke_flips_you_off_what_u_do/?tl=pt-pt" 
+                class="hover:text-blue-600 font-semibold text-lg whitespace-nowrap">
+                Clique aqui!!
+            </a>
+
+        </nav>
+
+        <hr class="bg-gray-400 h-0.5 mt-2">
+    </header>
+
+
+
+
+    <main class="ml-[60px] px-10">
+
+        <div class="text-3xl text-center mb-10 mt-6 font-semibold">
+            Título da matéria do baladobaco
+        </div>
+
+        <img 
+            src="senna.jpg"
+            class="w-[600px] h-auto mx-auto rounded-lg shadow-lg transition-transform duration-300 hover:scale-110"
+        >
+
+        <p class="text-justify mb-40 mt-10 mr-60 ml-20 indent-4 leading-7">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae vel aliquid
+            mollitia nobis commodi incidunt tenetur assumenda quis recusandae voluptatibus
+            eaque, ipsam blanditiis omnis repudiandae eius. Unde ex mollitia quam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores delectus eius ab architecto error,
+            minus aperiam ipsam consectetur harum amet ullam optio numquam hic quaerat vero rerum ipsum corporis! Quod?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, ullam maiores
+            repudiandae fuga voluptatem id maxime expedita nobis libero, et labore.
+            Quas, odio mollitia obcaecati vitae ducimus nemo deserunt officia.
+        </p>
+
+    </main>
+
+</body>
+</html>
