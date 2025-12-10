@@ -6,21 +6,39 @@
     <title>PAGINA DE F1 </title>
     <script src="https://cdn.tailwindcss.com"></script> 
 </head>
+
 <body class = "bg-white ">
-    <div class=" bg-white-100 pb-1" >
+
+    <header class="text-center py-4">
+        <h1 class="text-cyan-500 text-6xl font-bold">O INFORMATIVO</h1> <!-- Cor ciano, tamanho grande, negrito para destaque -->
+        <p class="text-sm text-gray-500 text-center">Quinta-feira, 2 de setembro de 2025</p> <!-- Texto cinza pequeno para data --> <!-- por opção pessoal de design, preferi deixar centralizada, mas, caso revogada a escolha por parte do setor de design do site colocar text-right mr-[25%] no respectivo <p>-->
+    </header>
+    <!-- <div class=" bg-white-100 pb-1" >
     <h1 class="text-center text-3xl text-blue-500 mt-5 mb-5 font-bold font-sans"> O INFORMATIVO</h1>
-     </div>
-     <hr class="bg-gray-400 h-0.5 columns-3xs ">
-       <div class=" grid: grid-cols-3 gap-4 px-4 text-center mb-1">  
-           <span class="outline-1  hover:text-blue-500 p-4"> Categoria</span>
-           <span class= "hover:text-blue-500 P-4"> Categoria</span>
-           <span class= "hover:text-blue-500 p-4"> Categoria</span>
+     </div> -->
+
+    <hr class="bg-gray-400 h-0.5 columns-3xs ">
+       <nav class=" flex flex-wrap justify-center gap-4 md:gap-16 py-2 text-black">  
+           <a href="#" class="outline-1  hover:text-blue-500 "> Categoria</a>
+           <a href="#" class= "hover:text-blue-500 "> Categoria</a>
+        <nav class="flex flex-wrap justify-center gap-4 md:gap-16 text-black">   
+           <a href="#" class= "hover:text-blue-500"> Categoria</a>
            <a href="https://youtu.be/dQw4w9WgXcQ?si=ljAZGA-ov2sj9Ayx"class="hover:text-blue-500"> Clique aqui!!</a>
-          </div>
-         <hr class="border-gray-400 h-0.5 columns-3xs my-6 border-t-10  "> 
-         <div class="text-3xl text-center mt-15 mb-10"> Titulo da materia do baladobaco </div> 
-    <img src="senna.jpg" class="w-[600px] h-auto mx-auto transition-transform duration-300 hover:scale-110">
-    <p class="text-justify mb-40 mt-10 mr-60 ml-20">  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae vel aliquid 
+       </nav>
+       </nav>
+    <hr class="bg-gray-400 h-0.5"> 
+
+    <aside class="fixed left  top-0 h-screen w-[1.5%] flex flex-col space-y-4 bg-cyan-500  items-center ">
+        <!-- Ícones placeholders; use imagens reais ou SVG em produção -->
+        <a href="lslm.html" class="mt-10">🏠</a> <!-- Ícone de início -->
+        <span>⚙️</span> <!-- Ícone de configurações -->
+        <span>✉️</span> <!-- Ícone de email -->
+    </aside>
+
+
+<div class="text-3xl text-center  mb-10"> Titulo da materia do baladobaco </div> 
+    <img src="senna.jpg" class="w-[600px] h-auto mx-auto transition-transform duration-300 hover:scale-110 rounded-lg shadow-lg">
+        <p class="text-justify mb-40 mt-10 mr-60 ml-20 indent-4 text-shadow-lg">  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae vel aliquid 
         mollitia nobis commodi incidunt tenetur assumenda quis recusandae voluptatibus 
         eaque, ipsam blanditiis omnis repudiandae eius. Unde ex mollitia quam!
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores delectus eius ab architecto error,
