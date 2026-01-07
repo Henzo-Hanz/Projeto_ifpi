@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSaude</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-black font-sans dark:bg-gray-900 dark:text-white">
+    <script>
+        module.exports = {
+            darkMode: 'media',
+            content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+            theme: { extend: {} },
+            plugins: [],
+        }
+
+    </script>
+    <aside
+        class="fixed left-0 top-0 h-screen w-[60px] bg-cyan-600 flex flex-col items-center py-6 space-y-6 text-white text-2xl  dark:bg-blue-900">
+        <a href="pagina_principal.html" class="hover:scale-110 transition">🏠</a>
+        <span class="hover:scale-110 transition cursor-pointer">⚙</span>
+        <span class="hover:scale-110 transition cursor-pointer">✉</span>
+    </aside>
+
+    <header class="py-4 ml-[60px] bg-white dark:bg-gray-900 dark:text-blue-500">
+        <nav class="flex flex-wrap  justify-center px-10 py-2">
+            <h1 class="text-cyan-500 text-2xl font-extrabold whitespace-nowrap ">
+                O INFORMATIVO
+            </h1>
+            <div class="flex gap-8 text-lg  mx-auto">
+                <a href="religiao.html"
+                    class="hover:text-blue-500 transition-transform duration-300 hover:scale-110">Religião</a>
+                <a href="cienciadiaria.html"
+                    class="hover:text-blue-500 transition-transform duration-300 hover:scale-110">Ciência</a>
+                <a href="oscar.html"
+                    class="hover:text-blue-500 transition-transform duration-300 hover:scale-110">Cultura pop</a>
+                <a href="copa_do_mundo.html"
+                    class="hover:text-blue-500 transition-transform duration-300 hover:scale-110">Esporte</a>
+                <a href="musica.html"
+                    class="hover:text-blue-500 transition-transform duration-300 hover:scale-110">Musica</a>
+            </div>
+
+        </nav>
+        <hr class="bg-gray-400 w-full h-0.5 ">
+    </header>
+
+    <main class="ml-[80px] px-10">
+
+        <div class="text-3xl text-center mb-10 mt-6 font-semibold">
+            Escutar para curar: a lição de Barbacena.
+        </div>
+
+        <img src="saude mental.jpg"
+            class="w-[600px] h-auto mx-auto rounded-lg shadow-lg transition-transform duration-300 hover:scale-110">
+        <div class="text-md"> Autora: Maria Lucinara </div>
+        <p class="text-justify  mt-10 mr-40 ml-20 indent-4 leading-7">
+            O preconceito contra a psicologia e contra a saúde mental teve consequências
+            graves na história, como aconteceu em Barbacena (MG). O Hospital Colônia,
+            criado em 1903, internou ao longo do século XX milhares de pessoas que não
+            eram doentes, mas pobres ou consideradas “diferentes” pela sociedade.
+            Sem escuta e sem cuidado psicológico, esses internos eram vítimas de violência
+            e abandono, o que resultou na morte de cerca de 60 mil pessoas até o fechamento
+            gradual do hospital, nos anos 1990.
+        </p>
+
+
+        <p class="text-justify  mt-1 mr-40 ml-20 indent-4 leading-7">
+            Com a reforma psiquiátrica, a partir dos anos 2000, Barbacena
+            começou a enfrentar esse passado. A criação do Museu da Loucura,
+            ]em 1996, e das residências terapêuticas mostra a importância da
+            psicologia e do cuidado humanizado para garantir dignidade e qualidade de vida.
+            Trabalhos como Holocausto Brasileiro, da jornalista Daniela Arbex,
+            ajudam a manter viva essa memória e a combater o preconceito contra a saúde mental.
+        </p>
+
+    </main>
+    <div>
+        <footer class=" mt-10 mt=10">
+            <hr class="bg-gray-400 w-full mr-10 ">
+            <div class=" mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+                <span class="text-sm text-body sm:text-center">© 2023 <a href="https://flowbite.com/" >Flowbite™</a>. All Rights Reserved.</span>
+                <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-body sm:mt-0">
+                    <li>
+                        <a href="#" class="hover:underline me-4 md:me-6">About</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+                    </li>    
+                </div>
+            </footer> 
+        </div>   
+</body>
+
+</html>
