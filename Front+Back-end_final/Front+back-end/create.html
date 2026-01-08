@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Notícia - O Informativo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center mb-6">Criar Notícia</h1>
+        <form id="create-form">
+            <div class="mb-4">
+                <label for="title" class="block text-gray-700">Título</label>
+                <input type="text" id="title" class="w-full px-3 py-2 border rounded-lg" required>
+            </div>
+            <div class="mb-4">
+                <label for="content" class="block text-gray-700">Conteúdo</label>
+                <textarea id="content" class="w-full px-3 py-2 border rounded-lg" required></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="image_url" class="block text-gray-700">URL da Imagem</label>
+                <input type="url" id="image_url" class="w-full px-3 py-2 border rounded-lg">
+            </div>
+            <button type="submit" class="w-full bg-cyan-500 text-white py-2 rounded-lg hover:bg-cyan-600">Criar</button>
+        </form>
+    </div>
+    <script src="js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('token')) {
+                window.location.href = 'login.html';
+            }
+        });
+        document.getElementById('create-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+            const image_url = document.getElementById('image_url').value;
+            try {
+                await window.api.createNews({ title, content, image_url });
+                alert('Notícia criada');
+                window.location.href = 'pagina_principal.html';
+            } catch (e) {
+                alert('Erro ao criar notícia');
+            }
+        });
+    </script>
+</body>
+</html>

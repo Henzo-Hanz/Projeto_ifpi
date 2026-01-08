@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-black font-sans dark:bg-gray-900 dark:text-white">
+
+    <aside class="fixed left-0 top-0 h-screen w-[60px] bg-cyan-600 flex flex-col items-center py-6 space-y-6 text-white text-2xl dark:bg-blue-900">
+        <a href="pagina_principal.html" class="hover:scale-110 transition">🏠</a>
+        <span class="hover:scale-110 transition cursor-pointer">⚙</span>
+        <span class="hover:scale-110 transition cursor-pointer">✉</span>
+    </aside>
+
+    <header class="py-4 ml-[60px] bg-white dark:bg-gray-900 dark:text-blue-500">
+        <nav class="flex flex-wrap justify-center px-10 py-2">
+            <h1 class="text-cyan-500 text-2xl font-extrabold whitespace-nowrap">
+                O INFORMATIVO
+            </h1>
+            <div class="flex gap-8 text-lg mx-auto">
+                <a href="cultura_pop.html" class="hover:text-blue-500 transition-transform hover:scale-110">Cultura Pop</a>
+                <a href="cienciadiaria.html" class="hover:text-blue-500 transition-transform hover:scale-110">Ciência</a>
+                <a href="saude.html" class="hover:text-blue-500 transition-transform hover:scale-110">Saúde Mental</a>
+                <a href="religiao.html" class="hover:text-blue-500 transition-transform hover:scale-110">Religião</a>
+                <a href="musica.html" class="hover:text-blue-500 transition-transform hover:scale-110">Musica</a>
+            </div>
+        </nav>
+        <hr class="bg-gray-400 w-full h-0.5">
+    </header>
+
+    <div id="loading" style="display:none;" class="text-center py-4 ml-[60px]">Carregando...</div>
+
+    <main class="ml-[80px] px-10">
+        <div class="text-3xl text-center mb-10 mt-6 font-semibold news-title"></div>
+        <img class="news-image w-[600px] h-auto mx-auto rounded-lg shadow-lg transition-transform duration-300 hover:scale-110">
+        <div class="text-md news-author"></div>
+        <div class="text-justify mt-10 mr-40 ml-20 indent-4 leading-7 news-content"></div>
+    </main>
+
+    <section class="ml-[80px] px-10 py-10">
+        <h2 class="text-2xl font-bold mb-4">Comentários</h2>
+        <div id="comments" class="space-y-4"></div>
+        <div id="comment-form" style="display:none;">
+            <textarea id="comment-content" class="w-full p-2 border rounded" placeholder="Digite seu comentário"></textarea>
+            <button id="submit-comment" class="mt-2 px-4 py-2 bg-cyan-500 text-white rounded">Enviar</button>
+        </div>
+    </section>
+
+    <script src="js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            if (!id) {
+                alert('ID da notícia não encontrado');
+                return;
+            }
+            const loading = document.getElementById('loading');
+            loading.style.display = 'block';
+            try {
+                const news = await window.api.getNewsById(id);
+                renderNews(news);
+                const comments = await window.api.getComments(id);
+                renderComments(comments);
+                // Check if logged in
+                if (localStorage.getItem('token')) {
+                    document.getElementById('comment-form').style.display = 'block';
+                }
+            } catch (e) {
+                console.error(e);
+            } finally {
+                loading.style.display = 'none';
+            }
+        });
+
+        function renderNews(news) {
+            document.querySelector('.news-title').textContent = news.title;
+            document.querySelector('.news-image').src = news.image_url;
+            document.querySelector('.news-author').textContent = `Autor: ${news.author}`;
+            document.querySelector('.news-content').innerHTML = news.content;
+            document.title = news.title;
+        }
+
+        function renderComments(comments) {
+            const commentsDiv = document.getElementById('comments');
+            commentsDiv.innerHTML = comments.map(c => `
+                <div class="border-b pb-2">
+                    <p><strong>${c.user}</strong>: ${c.conteudo}</p>
+                </div>
+            `).join('');
+        }
+
+        document.getElementById('submit-comment').addEventListener('click', async () => {
+            const content = document.getElementById('comment-content').value;
+            if (!content) return;
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            try {
+                await window.api.createComment(id, content);
+                document.getElementById('comment-content').value = '';
+                // Reload comments
+                const comments = await window.api.getComments(id);
+                renderComments(comments);
+            } catch (e) {
+                console.error(e);
+            }
+        });
+    </script>
+</body>
+</html>

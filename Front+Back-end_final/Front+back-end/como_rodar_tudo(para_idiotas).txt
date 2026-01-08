@@ -1,0 +1,13 @@
+apenas vá no python, use o comando "python -m http.server 3000
+"
+para checar se funcionou abra no navegador "http://localhost:3000/pagina_principal.html
+"
+(o terminal deve retornar as requisições)
+apos isso ligue o back-end e repita o processo
+como ligar o back-end?
+va para o arquivo manage.py
+rode:
+python manage.py runserver
+
+lembrando que deve ser em outra instância do PS ou ocorrerá erros,recomendável inclusive,usar uma .venv
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - O Informativo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center mb-6">Perfil</h1>
+        <form id="profile-form">
+            <div class="mb-4">
+                <label for="nome" class="block text-gray-700">Nome</label>
+                <input type="text" id="nome" class="w-full px-3 py-2 border rounded-lg" required>
+            </div>
+            <button type="submit" class="w-full bg-cyan-500 text-white py-2 rounded-lg hover:bg-cyan-600">Atualizar</button>
+        </form>
+        <button id="logout" class="w-full mt-4 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600">Logout</button>
+    </div>
+    <script src="js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!localStorage.getItem('token')) {
+                window.location.href = 'login.html';
+            }
+            try {
+                const profile = await window.api.getProfile();
+                document.getElementById('nome').value = profile.nome;
+            } catch (e) {
+                alert('Erro ao carregar perfil');
+            }
+        });
+        document.getElementById('profile-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            try {
+                await window.api.updateProfile(nome);
+                alert('Perfil atualizado');
+            } catch (e) {
+                alert('Erro ao atualizar');
+            }
+        });
+        document.getElementById('logout').addEventListener('click', async () => {
+            await window.api.logout();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar - O Informativo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center mb-6">Registrar</h1>
+        <form id="register-form">
+            <div class="mb-4">
+                <label for="nome" class="block text-gray-700">Nome</label>
+                <input type="text" id="nome" class="w-full px-3 py-2 border rounded-lg" required>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700">Email</label>
+                <input type="email" id="email" class="w-full px-3 py-2 border rounded-lg" required>
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700">Senha</label>
+                <input type="password" id="password" class="w-full px-3 py-2 border rounded-lg" required>
+            </div>
+            <div class="mb-4">
+                <label for="password2" class="block text-gray-700">Confirmar Senha</label>
+                <input type="password" id="password2" class="w-full px-3 py-2 border rounded-lg" required>
+            </div>
+            <button type="submit" class="w-full bg-cyan-500 text-white py-2 rounded-lg hover:bg-cyan-600">Registrar</button>
+        </form>
+        <p class="text-center mt-4">Já tem conta? <a href="login.html" class="text-cyan-500">Login</a></p>
+    </div>
+    <script src="js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('token')) {
+                window.location.href = 'pagina_principal.html';
+            }
+        });
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const password2 = document.getElementById('password2').value;
+            try {
+                await window.api.register(nome, email, password, password2);
+                window.location.href = 'pagina_principal.html';
+            } catch (e) {
+                alert('Erro no registro');
+            }
+        });
+    </script>
+</body>
+</html>
