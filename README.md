@@ -8,10 +8,3 @@ Este é um projeto escolar desenvolvido no Instituto Federal do Piauí (IFPI), C
 
 ---
 
-## 📌 Status do Projeto
-
-O projeto encontra-se **em fase inicial**, sem previsões definidas para sua conclusão.
-
----
-
-> Este repositório será atualizado conforme o desenvolvimento do jornal avança.
